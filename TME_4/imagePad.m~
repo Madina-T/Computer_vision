@@ -1,0 +1,12 @@
+function Ip = imagePad(I,h)
+d = size(h,1);
+n = size(I,1);
+m = size(I,2);
+a = (d-1)/2; % on va ajouter (d-1)/2 colonnes et lignes de zéros de part et
+             % d'autre de l'image pour pouvoir appliquer le filtre sur
+             % chaque p
+Ip = zeros(n+((d-1)/2),m+((d-1)/2));
+Ip(l:n-l,l:m-l) = I;
+
+
+

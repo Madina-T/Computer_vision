@@ -1,0 +1,31 @@
+% Exercice 2
+
+% 1. Pour effectuer une convolution, on entoure d'abord l'image de zéros en ajoutant (d-1)/2 colonnes et
+% lignes de zéros de part et d'autre de celle-ci afin de 
+% pouvoir appliquer n'importe quel filtre de taille d sur
+% chaque pixel          
+
+h3 = (1/9)*ones(3,3); % filtre moyenneur de taille 3*3
+h5 = (1/25)*ones(5,5); % filtre moyenneur de taille 5*5
+h7 = (1/49)*ones(7,7); % filtre moyenneur de taille 7*7
+
+I = ouvrirImage('barbara.png');
+
+C3 = convolution(I,h3); % image filtree resultat de la convolution 
+imageview(C3);
+
+C5 = convolution(I,h5);
+imageview(C5);
+
+C7 = convolution(I,h7);
+imageview(C7);
+
+% 4. 
+
+f256 = zeros(256,256);
+H3 = imagePad(h7,f256);
+IfH3 = fft2(H3);
+IfsH3 = abs(fftshift(IfH3));
+mesh(IfsH3);
+
+
