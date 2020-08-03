@@ -1,0 +1,15 @@
+I1 = ouvrirImage('sonrot.gif');
+[Ir1, ordom] = rectify_orientation(I1);
+imageview(Ir1);
+
+I2 = ouvrirImage('port.jpg');
+[Ir2, ordom] = rectify_orientation(I1);
+imageview(Ir2);
+Ir2
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Q8. La rotation est bien effectuee sur l'image sonrot.gif tandis que
+% l'image port.jpg ne subit aucune transformation. Cela est du au fait que 
+% l'image port.jpg est deja orientee horizontalement, l'angle ordom calcule
+% par la fonction est donc nul et 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

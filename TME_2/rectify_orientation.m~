@@ -1,0 +1,12 @@
+function [Ir, ordom] = rectify_orientation(I)
+If = compute_FT(I) % If = TF de I
+M = to_visualize_TF(If); % M = module de la TF de I (If)
+Mb = image_binarization(If,3*10^5); % Mb = 
+imageview(If);
+imageview(M);
+imageview(Mb);
+[Ior, ordom] = orientationDominante(Mb);
+imageview(Ior);
+ordom;
+Ir = rotationImage(Ior,ordom);
+end
